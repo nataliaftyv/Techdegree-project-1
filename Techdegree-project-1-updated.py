@@ -14,7 +14,10 @@ def start_game():
             try:
                 guess = int(input('Pick a number between 1 and 100! \nYour guess: '))
                 while guess != answer:
-                    if guess > answer:
+                    if guess > 100:
+                        print('Your guess is outside the answer range! Must be between 1 and 100!')
+                        guess = int(input('Try again! \nYour guess: '))
+                    elif guess > answer:
                         attempt_count += 1
                         print("It's lower")
                         guess = int(input('Try again! \nYour guess: '))
